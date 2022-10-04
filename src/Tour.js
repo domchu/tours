@@ -1,7 +1,11 @@
 import React from "react";
 
 const Tour = () => {
-  return <div>Tour</div>;
+  return (
+    <div>
+      <h2>single tour component</h2>
+    </div>
+  );
 };
 
 export default Tour;
