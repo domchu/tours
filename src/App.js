@@ -41,7 +41,12 @@ function App() {
  ============
  */
 
-  //useEffect is the same thing like setTimeOut in js
+  /*
+  ======
+  useEffect is the same thing like setTimeOut in js
+  invoke the fetch tour function from the api
+  ======
+  */
   useEffect(() => {
     fetchTours();
   }, []);
