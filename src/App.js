@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
-import Tour from "./Tour";
+// import Tour from "./Tour";
 import "./App.css";
 import Tours from "./Tours";
 const url = "https://course-api.com/react-tours-project";
@@ -9,6 +9,12 @@ const url = "https://course-api.com/react-tours-project";
 function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
+
+  //remove the tour when user click on the not interested button
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
 
   //call the api using async and try catch errors
   const fetchTours = async () => {
@@ -50,7 +56,7 @@ function App() {
 
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 }
